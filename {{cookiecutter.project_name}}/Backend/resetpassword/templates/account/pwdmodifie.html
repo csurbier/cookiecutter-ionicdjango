@@ -1,0 +1,17 @@
+{# test template #}
+ {% load static %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>{{cookiecutter.project_name}}, mot de passe modifié</title>
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+      <link rel="stylesheet" href="{% static 'resetpassword/css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+      <h2 class="form-signin-heading">Votre mot de passe a été modifié</h2>
+        <h3>Vous pouvez aller vous connecter à l'application.</h3>
+    </div>
+</body>
+</html>

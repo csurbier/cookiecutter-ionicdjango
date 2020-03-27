@@ -1,0 +1,5 @@
+{ "deploy": {
+   "module": "{{cookiecutter.project_name}}_wsgi",
+    "static": "/static/"
+  }
+}

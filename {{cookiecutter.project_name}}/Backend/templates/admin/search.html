@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>cc</title>
+</head>
+<body style="font-family: 'Montserrat', sans-serif;">
+
+
+
+{% extends "admin/change_list.html" %}
+{% load staticfiles %}
+
+{% block content_title %}
+
+
+<p>LOANS</p>
+
+{% endblock %}
+
+
+{% block result_list %}
+    <style>
+table {
+    font-family: 'Montserrat', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #43768F;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D7ECFA;
+}
+</style>
+<p>TABULAR VISUALIZATION</p>
+<table>
+  <tr style="color: red">
+    <th>Utilisateur</th>
+    <th>Départ</th>
+    <th>Arrivée</th>
+  </tr>
+ {% for data in data %}
+      <tr>
+    <td>{{ data.refUser }}</td>
+    <td> {{ data.startName }}</td>
+    <td> {{ data.destinationName }}</td>
+  </tr>
+{% endfor %}
+
+</table>
+     <table style="margin-bottom: 100px;color: #333333">
+
+        <tr>
+            <td>Total</td>
+            <td>Search Count {{ totals.totalsearch  }} </td>
+            <td>  </td>
+        </tr>
+    </table>
+
+<p>GRAPHICAL VISUALIZATION</p>
+<div class="chart" style="height: 500px;width: 500px;overflow: scroll;float: left;">
+  <canvas style="font-family: 'Montserrat', sans-serif;" id="bargraph" width="500" height="400"></canvas>
+
+</div>
+    <div class="chart" style="height: 500px;width: 500px;overflow: scroll;float: left;">
+  <canvas style="font-family: 'Montserrat', sans-serif;" id="linegraph" width="500" height="400"></canvas>
+
+</div>
+
+        <div class="chart" style="height: 500px;width: 500px;overflow: scroll;float: left;">
+  <canvas style="font-family: 'Montserrat', sans-serif;" id="piechart" width="500" height="400"></canvas>
+
+</div>
+
+     <div class="chart" style="height: 500px;width: 500px;overflow: scroll;">
+  <canvas style="font-family: 'Montserrat', sans-serif;" id="radarhart" width="500" height="400"></canvas>
+
+</div>
+
+
+
+
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="{% static "js/Chart.min.js" %}"></script>
+
+
+        <script>
+      var ctx = document.getElementById("bargraph").getContext('2d');
+
+var bargraph = new Chart(ctx, {
+    type: 'bar',
+    data: {{ cl.data|safe }},
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+var ctx2 = document.getElementById("linegraph").getContext('2d');
+
+var linegraph = new Chart(ctx2, {
+    type: 'line',
+    data: {{ cl.data|safe }},
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+var ctx3 = document.getElementById("piechart").getContext('2d');
+
+var piechart = new Chart(ctx3, {
+    type: 'pie',
+    data: {{ cl.data|safe }},
+
+});
+
+
+var ctx4 = document.getElementById("radarhart").getContext('2d');
+
+var radarhart = new Chart(ctx4, {
+    type: 'radar',
+    data: {{ cl.data|safe }},
+
+});
+        </script>
+
+
+
+
+{% endblock %}
+
+{% block pagination %}{% endblock %}
+
+
+</body>
+</html>

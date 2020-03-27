@@ -1,0 +1,7 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

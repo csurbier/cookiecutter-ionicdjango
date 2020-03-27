@@ -1,0 +1,11 @@
+export STATIC_URL_PREFIX=/static
+export POSTGRESQL_ADDON_URI=postgresql://unlrcqzozqohzuu0kuww:Exv9x0hrGFuIsx0mkJ4x@bq6lhh5nzktxrfchgohx-postgresql.services.clever-cloud.com:5170/bq6lhh5nzktxrfchgohx
+export POSTGRESQL_ADDON_PORT=5170
+export POSTGRESQL_ADDON_HOST=bq6lhh5nzktxrfchgohx-postgresql.services.clever-cloud.com
+export POSTGRESQL_ADDON_DB=bq6lhh5nzktxrfchgohx
+export POSTGRESQL_ADDON_USER=unlrcqzozqohzuu0kuww
+export POSTGRESQL_ADDON_PASSWORD=Exv9x0hrGFuIsx0mkJ4x
+export APP_HOME=/Users/christophesurbier/Documents/Programmation/app_d1f616fd-1494-4ace-aea9-746b5a24efbf
+export DEBUG=True
+export ENVIRONNEMENT=DEV
+export INSTANCE_NUMBER=1
