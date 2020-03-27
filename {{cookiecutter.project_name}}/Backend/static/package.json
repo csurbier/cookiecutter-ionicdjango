@@ -35,7 +35,7 @@
   },
   "homepage": "https://www.drfdocs.com/",
   "dependencies": {
-    "bootstrap": "=3.3.6",
+    "bootstrap": "=3.4.1",
     "bootswatch": "=3.3.6",
     "font-awesome": "=4.5.0",
     "jquery": "=1.11.3",
